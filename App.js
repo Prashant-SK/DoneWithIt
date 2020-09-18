@@ -3,6 +3,9 @@ import React from "react";
 import {
   StyleSheet,
   Text,
+  TouchableOpacity,
+  TouchableHighlight,
+  TouchableNativeFeedback,
   View,
   Image,
   TouchableWithoutFeedback,
@@ -14,15 +17,17 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text onPress={handlePress}>Hello Cars</Text>
-      <Image
-        blurRadius={10}
-        fadeDuration={1000}
-        source={{
-          width: 200,
-          height: 300,
-          uri: "https://picsum.photos/200/300",
-        }}
-      />
+      <TouchableHighlight onPress={() => console.log("Image tapped")}>
+        <Image
+          blurRadius={10}
+          fadeDuration={1000}
+          source={{
+            width: 200,
+            height: 300,
+            uri: "https://picsum.photos/200/300",
+          }}
+        />
+      </TouchableHighlight>
 
       <StatusBar style="auto" />
     </SafeAreaView>
